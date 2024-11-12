@@ -104,3 +104,38 @@ select:focus {
 .submit-btn:hover {
     background-color: #2563eb;
 }
+
+.error {
+    border: 2px solid red !important;
+}
+
+/* Password toggle styling */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Password input field styling */
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    width: 100%;
+    padding-right: 40px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.password-toggle-text {
+    font-size: 12px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.repeat-password-toggle-text {
+    font-size: 12px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

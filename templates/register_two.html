@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register_style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Academic Details</h2>
+    <form action="{{ url_for('submit') }}" method="post">
+        <div class="form-group">
+            <label for="grad_year">Choose Graduation Year:</label>
+            <select id="grad_year" name="grad_year">
+                <option value="">Select a year</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="major">Major</label>
+            <select id="major" name="major">
+                <option value="" disabled selected>Select a major</option>
+                <option value="accounting">Accounting</option>
+                <option value="biology">Biology</option>
+                <option value="business">Business Administration</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="computer-science">Computer Science</option>
+                <option value="economics">Economics</option>
+                <option value="education">Education</option>
+                <option value="engineering">Engineering</option>
+                <option value="english">English Literature</option>
+                <option value="finance">Finance</option>
+                <option value="history">History</option>
+                <option value="journalism">Journalism</option>
+                <option value="marketing">Marketing</option>
+                <option value="mathematics">Mathematics</option>
+                <option value="nursing">Nursing</option>
+                <option value="philosophy">Philosophy</option>
+                <option value="physics">Physics</option>
+                <option value="political-science">Political Science</option>
+                <option value="psychology">Psychology</option>
+                <option value="sociology">Sociology</option>
+                <option value="theater">Theater Arts</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="degree">Choose your degree:</label>
+            <select id="degree" name="degree">
+                <option value="" disabled selected>Select a degree</option>
+                <option value="associate">Associate's Degree</option>
+                <option value="bachelor">Bachelor's Degree</option>
+                <option value="master">Master's Degree</option>
+                <option value="mba">Master of Business Administration (MBA)</option>
+                <option value="phd">Doctor of Philosophy (PhD)</option>
+                <option value="jd">Juris Doctor (JD)</option>
+                <option value="md">Doctor of Medicine (MD)</option>
+                <option value="dvm">Doctor of Veterinary Medicine (DVM)</option>
+                <option value="dds">Doctor of Dental Surgery (DDS)</option>
+                <option value="edD">Doctor of Education (EdD)</option>
+                <option value="scd">Doctor of Science (ScD)</option>
+                <option value="mfa">Master of Fine Arts (MFA)</option>
+            </select>
+
+        </div>
+        <button type="submit" class="submit-btn">Register</button>
+    </form>
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename='register_js.js') }}"></script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

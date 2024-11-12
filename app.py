@@ -90,6 +90,27 @@ def submit():
             return render_template('register.html')
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    print("test")
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        print(1)
+
+        user = user_col.find_one({'email': email})
+        print(user)
+
+        if not user:
+            flash('Email not found!', 'error')
+        elif not (user['password'] == sha256(password)):
+            flash('Incorrect password!', 'error')
+        else:
+            flash('Login successful!', 'success')
+            return redirect(url_for('home'))
+
+    return render_template('login.html')
+
 if __name__ == '__main__':
     print("Trying to connect to the database.")
     try:

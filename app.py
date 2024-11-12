@@ -65,17 +65,6 @@ def register():
 
 @app.route('/register_two', methods=['GET', 'POST'])
 def register_two():
-    global acad_data
-
-    if request.method == 'POST':
-        grad_year = request.form.get('grad_year')
-        degree = request.form.get('degree')
-        major = request.form.get('major')
-
-        acad_data = {"_id": username, "grad_year": grad_year, "degree": degree, "major": major}
-
-        return redirect(url_for('home'))
-
     return render_template("register_two.html")
 
 

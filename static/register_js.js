@@ -42,10 +42,10 @@ function togglePasswordVisibility() {
     // Toggle password visibility
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
-        icon.textContent = "Hide Password"; // Optional: Change icon to indicate 'Hide'
+        icon.textContent = "Hide Password";
     } else {
         passwordInput.type = "password";
-        icon.textContent = "See Password"; // Optional: Change icon to indicate 'Show'
+        icon.textContent = "See Password";
     }
 }
 
@@ -61,4 +61,16 @@ function toggleRepeatPasswordVisibility() {
         repeatPasswordInput.type = "password";
         icon.textContent = "See Password";
     }
+}
+
+
+const startYear = 1980;
+const endYear = 2040;
+const yearDropdown = document.getElementById("grad_year");
+
+for (let year = startYear; year <= endYear; year++) {
+    let option = document.createElement("option");
+    option.value = year;
+    option.textContent = year;
+    yearDropdown.appendChild(option);
 }

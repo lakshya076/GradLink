@@ -9,6 +9,17 @@
 <body>
 <div class="container">
     <h2>Register</h2>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
     <form id="registrationForm" action="/register" method="post">
         <div class="form-grid">
             <!-- Column 1 -->
@@ -56,7 +67,7 @@
                 <input type="date" id="dob" name="dob" required>
             </div>
         </div>
-        <button type="button" onclick="validateForm()" class="submit-btn">Register</button>
+        <button type="button" onclick="validateForm()" class="submit-btn">Continue</button>
     </form>
 </div>
 <script type="text/javascript" src="{{ url_for('static', filename='register_js.js') }}"></script>

@@ -16,7 +16,10 @@ function validateForm() {
     });
 
     // Check if passwords match
-    if ((password.value && repeatPassword.value && (password.value !== repeatPassword.value)) || (password.value === "" && repeatPassword.value === "")) {
+    if ((password.value && repeatPassword.value && (password.value !== repeatPassword.value)) ||
+        (password.value === "" && repeatPassword.value === "") ||
+        (password.value === "" & repeatPassword.value !== "") ||
+        (password.value !== "" && repeatPassword.value === "")) {
         password.classList.add('error');
         repeatPassword.classList.add('error');
         console.log("Passwords do not match."); // Debugging output
@@ -48,7 +51,7 @@ function togglePasswordVisibility() {
 
 function toggleRepeatPasswordVisibility() {
     const repeatPasswordInput = document.getElementById("repeatPassword");
-    const icon = document.querySelector(".password-toggle-text");
+    const icon = document.querySelector(".repeat-password-toggle-text");
 
     // Toggle password visibility
     if (repeatPasswordInput.type === "password") {

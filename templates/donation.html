@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Our College - Donation Portal</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='donation_style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <h1>Support Our College</h1>
+        <p>Your contribution helps provide better education, resources, and opportunities for our students.</p>
+    </header>
+	<br>
+    <section class="donation-section">
+        <h2>Make a Difference</h2>
+        <p>Your donation supports scholarships, infrastructure, faculty development, and student programs. Every contribution counts in helping us grow and provide the best education for the future leaders of tomorrow.</p>
+
+        <div class="donation-options">
+            <div class="donation-option">
+                <h3>Scholarship Fund</h3>
+                <p>Help deserving students continue their education with financial aid.</p>
+            </div>
+            <div class="donation-option">
+                <h3>Infrastructure Development</h3>
+                <p>Support the enhancement of our campus facilities and equipment.</p>
+            </div>
+            <div class="donation-option">
+                <h3>Student Programs</h3>
+                <p>Fund various extracurricular and academic programs that enrich student life.</p>
+            </div>
+        </div>
+    </section>
+	<br>
+    <section class="donation-form-section">
+        <h2>Donate Now</h2>
+        <form action="/submit-donation" method="POST">
+            <div class="form-group">
+                <label for="donation-amount">Donation Amount ($)</label>
+                <input type="number" id="donation-amount" name="amount" min="5" placeholder="Enter amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="donor-name">Full Name</label>
+                <input type="text" id="donor-name" name="name" placeholder="Your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="donor-email">Email</label>
+                <input type="email" id="donor-email" name="email" placeholder="Your email address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="ndebit-card">Debit Card</option>
+                    <option value="paytm">Paytm</option>
+                    <option value="gpay">GPay</option>
+                    <option value="phonepe">PhonePe</option>
+                </select>
+            </div>
+
+            <button type="submit" class="donate-btn">Donate Now</button>
+        </form>
+    </section>
+
+    <section class="donor-thank-you">
+        <h2>Thank You to Our Generous Donors</h2>
+        <ul class="donor-list">
+            <li>Shivang Mehtani</li>
+            <li>Arnav Tyagi</li>
+            <li>Piyush Sharma</li>
+        </ul>
+    </section>
+	<br>
+    <footer class="footer1">
+        <p>Contact us at @jiit.ac.in or at 95200095XX<br>&copy; 2024 Jaypee Institute of Information Technology | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
+

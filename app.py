@@ -1,5 +1,5 @@
 import sys
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for, flash, session
 from pymongo.mongo_client import MongoClient
 from pymongo import errors
 from Utility.encryption import sha256
@@ -18,18 +18,6 @@ app = Flask(__name__)
 app.secret_key = "ok"
 
 
-def insert_user(data: dict, collection):
-    """
-    Inserts a new user document into the collection.
-    """
-
-    try:
-        collection.insert_one(data)
-        print("Insertion successful")
-    except errors.DuplicateKeyError:
-        print("DuplicationError. Try Again")
-
-
 @app.route('/')
 def home():
     return render_template("index.html")
@@ -42,6 +30,10 @@ def dashboard():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    if 'user_id' in session:
+        print("Already logged in. Redirecting to home.")
+        return redirect(url_for('home'))
+
     global user_data, username
 
     if request.method == 'POST':
@@ -70,6 +62,9 @@ def register_two():
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
+    if 'user_id' in session:
+        print("Already logged in. Redirecting to home.")
+        return redirect(url_for('home'))
     global acad_data
 
     if request.method == 'POST':
@@ -83,6 +78,7 @@ def submit():
             user_col.insert_one(user_data)
             acad_col.insert_one(acad_data)
             print("Insertion successful")
+            session['user_id'] = username
             return redirect(url_for('home'))
         except errors.DuplicateKeyError:
             print("DuplicationError. Try Again")
@@ -92,11 +88,13 @@ def submit():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    print("test")
+    if 'user_id' in session:
+        print("Already logged in. Redirecting to home.")
+        return redirect(url_for('home'))
+
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
-        print(1)
 
         user = user_col.find_one({'email': email})
         print(user)
@@ -107,9 +105,28 @@ def login():
             flash('Incorrect password!', 'error')
         else:
             flash('Login successful!', 'success')
+            session['user_id'] = user['_id']
             return redirect(url_for('home'))
 
     return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    session.pop('user_id', None)
+    print("Logged out successfully")
+    return redirect(url_for('login'))
+
+
+@app.route('/donation')
+def donation():
+    return render_template('donation.html')
+
+
+@app.route('/success')
+def success():
+    return render_template("success.html")
+
 
 if __name__ == '__main__':
     print("Trying to connect to the database.")

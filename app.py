@@ -2,7 +2,7 @@ import sys
 from flask import Flask, render_template, redirect, request, url_for, flash, session
 from pymongo.mongo_client import MongoClient
 from pymongo import errors
-from Utility.encryption import sha256
+from utility.encryption import sha256
 
 uri = "mongodb+srv://lakshyasaxena076:IX4voLrdMVuY9ELo@cluster0.sy08f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = MongoClient(uri)
@@ -20,11 +20,17 @@ app.secret_key = "ok"
 
 @app.route('/')
 def home():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
     return render_template("index.html")
 
 
 @app.route('/dashboard')
 def dashboard():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
     return render_template("index.html")
 
 

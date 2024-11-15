@@ -4,243 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni Profile</title>
-    <style>
-        /* Global Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #2E2E2E; /* Softer dark background */
-            color: #D0D0D0; /* Softer light text color */
-            overflow-x: hidden;
-        }
-
-        /* Header Styling */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #4A4E69; /* Muted purple */
-            color: #F2E9E4; /* Light beige */
-            padding: 15px 20px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Adjust Main Content to Avoid Header Overlap */
-        .main-content {
-            margin-top: 80px;
-            padding: 20px 40px 20px 20px; /* Add padding on the right */
-        }
-
-        /* Logo and Title in Header */
-        header .logo {
-            width: 50px;
-            height: 45px;
-        }
-
-        header .dashboard {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #F2E9E4;
-            margin-left: 180px;
-        }
-
-        header .logo-right {
-            width: 120px;
-        }
-
-        header a{
-            margin-left:0px;
-            margin-right:10px;
-            padding-right:10px;
-        }
-
-        /* Side Navigation */
-        nav {
-            margin-top: 80px;
-            width: 270px;
-            background-color: #22223B; /* Dark blue-gray */
-            padding-top: 30px;
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            transition: 0.3s;
-            height: 100vh;
-            padding-left: 20px;
-        }
-
-        nav a {
-            color: #C9ADA7; /* Light muted color */
-            padding: 15px 20px;
-            text-align: left;
-            display: block;
-            text-decoration: none;
-            font-size: 1.1em;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #4A4E69;
-            color: #F2E9E4;
-            width: 80%;
-        }
-
-        /* Profile Section */
-        .profile-container {
-            margin-left: 300px;
-            padding: 40px 50px;
-            width: calc(100% - 350px); /* Adjust width to account for right margin */
-        }
-
-        .profile-container h2 {
-            font-size: 1.9em;
-            color: #E1D4C4; /* Softer light color */
-            margin-bottom: 20px;
-        }
-
-        .welcome-message {
-            font-size: 1.5em;
-            color: #A7A6A6; /* Muted light gray */
-            margin: 10px 0;
-        }
-
-        /* Profile Card */
-        .profile-card, .description-box {
-            background-color: #4A4E69; /* Muted purple */
-            padding: 35px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            width: 80%; /* Set a fixed width for both */
-            margin: 0 auto 40px; /* Center and add space below */
-            text-align: center;
-        }
-
-        .profile-card:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-        }
-
-        .profile-card img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-        .profile-card h3 {
-            color: #E1D4C4;
-            margin-bottom: 10px;
-            font-size: 2em;
-        }
-
-        .profile-card p {
-            font-size: 1.2em;
-            color: #B2B1B1;
-            margin: 8px 0;
-        }
-
-        /* Description Box */
-        .description-box {
-            font-size: 1.3em;
-            line-height: 1.7;
-            color: #E1D4C4;
-            text-align: left;
-        }
-
-        /* Button Styling */
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #4A4E69;
-            color: #F2E9E4;
-            font-size: 1.2em;
-            border-radius: 30px;
-            text-decoration: none;
-            margin-top: 30px;
-            transition: background-color 0.3s;
-        }
-
-        .button:hover {
-            background-color: #3B3B58;
-        }
-
-        footer {
-            background-color: #4A4E69; /* Muted purple for footer */
-            color: #F2E9E4; /* Light beige text */
-            padding: 20px 40px;
-            text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            margin-top: 40px; /* Space above footer */
-        }
-
-        footer a {
-            color: #F2E9E4; /* Consistent light color */
-            text-decoration: none;
-            font-size: 1.1em;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: #C9ADA7; /* Slightly muted color on hover */
-        }
-
-        footer p {
-            font-size: 1em;
-            margin: 10px 0 0;
-        }
-    </style>
+    <title>GradLink Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
 </head>
 
 <body>
+<!-- Header -->
 <header>
-    <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Logo-jiit.png" alt="Logo 1" class="logo">
-    <div class="dashboard">Dashboard</div>
-    <a href="login" class="auth-button">Login</a>
+    <span class="hamburger-menu" onclick="toggleSidebar()">&#9776;</span>
+    <div class="banner">
+        <a href="/dashboard">
+            <img src="{{ url_for('static', filename='images/gradlink-banner.png') }}" alt="Banner Image">
+        </a>
+    </div>
+    <div class="title">Dashboard</div>
+    <div class="header-buttons">
+        <button onclick="openSettings()" title="Settings">&#9881;</button>
+        <button class="profile-icon" title="Profile"></button>
+    </div>
 </header>
-<div class="main-content">
-    <nav>
-        <a href="dashboard">Profile</a>
-        <a href="donation">Donate</a>
-        <a href="#networking">Networking</a>
-        <a href="success">Notable Alumni</a>
-        <a href="#jobs">Job Portal</a>
-        <a href="#events">Events</a>
-        <a href="logout">Logout</a>
-    </nav>
 
+<!-- Sidebar -->
+<div id="sidebar">
+    <a href="dashboard">Profile</a>
+    <a href="donation">Donate</a>
+    <a href="#networking">Networking</a>
+    <a href="success">Notable Alumni</a>
+    <a href="#jobs">Job Portal</a>
+    <a href="#events">Events</a>
+    <a href="logout">Logout</a>
+</div>
+
+<!-- Main Content -->
+<div id="main-content">
     <div class="profile-container">
         <h2>Welcome, John Doe!</h2>
-        <div class="welcome-message">Welcome to your Alumni Dashboard. Manage your profile, discover new
-            opportunities, and connect with peers!
+        <div class="welcome-message">
+            Welcome to your Alumni Dashboard. Manage your profile, discover new opportunities, and connect with peers!
         </div>
 
-        <div class="profile-card">
-            <img src="https://www.entrepreneurindia.com/2018/assets/img/speakers/jaspreet.jpg" alt="Profile Picture">
-            <h3>John Doe</h3>
-            <p>Batch Year: 2013</p>
-            <p>DOB: 5/05/1991</p>
-            <p>Email: johndoe.@gmail.com</p>
-        </div>
+        <div class="profile-card-container">
+            <div class="profile-card">
+                <img src="https://www.entrepreneurindia.com/2018/assets/img/speakers/jaspreet.jpg"
+                     alt="Profile Picture">
+                <h3>John Doe</h3>
+                <p>Batch Year: 2013</p>
+                <p>DOB: 5/05/1991</p>
+                <p>Email: johndoe.@gmail.com</p>
+            </div>
 
-        <div class="description-box">
-            <h4>About John Doe</h4>
-            <p>Alumni Bio section. Here the alumni can add their laurels, achievements and life experiences.</p>
+            <div class="description-box-container">
+                <h4>About John Doe</h4>
+                <p>Alumni Bio section. Here the alumni can add their laurels, achievements and life experiences.</p>
+            </div>
         </div>
 
         <a href="#" class="button">Explore More</a>
     </div>
 </div>
+
+<!-- Footer -->
 <footer>
     <div>
         <a href="#contact" onclick="scrollToSection('contact')">Contact Us</a>
@@ -250,12 +73,24 @@
 </footer>
 
 <script>
-    // JavaScript function for smooth scrolling to sections
-    function scrollToSection(id) {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({behavior: 'smooth'});
-        }
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+
+        sidebar.classList.toggle('open');
+        mainContent.classList.toggle('open');
+    }
+
+    function closeSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+
+        sidebar.classList.remove('open');
+        mainContent.classList.remove('open');
+    }
+
+    function openSettings() {
+        alert("Settings button clicked! Add your settings functionality here.");
     }
 </script>
 </body>

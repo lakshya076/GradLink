@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Our College - Donation Portal</title>
+    <title>Donate</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='donation_style.css') }}">
 </head>
+
 <body>
-    <header class="header">
-        <h1>Support Our College</h1>
-        <p>Your contribution helps provide better education, resources, and opportunities for our students.</p>
-    </header>
-	<br>
+<!-- Header -->
+<header>
+    <span class="hamburger-menu" onclick="toggleSidebar()">&#9776;</span>
+    <div class="banner">
+        <a href="/dashboard">
+            <img src="{{ url_for('static', filename='images/gradlink-banner.png') }}" alt="Banner Image">
+        </a>
+    </div>
+    <div class="title">Donation Portal</div>
+    <div class="header-buttons">
+        <button onclick="openSettings()" title="Settings">&#9881;</button>
+        <button class="profile-icon" title="Profile"></button>
+    </div>
+</header>
+
+<!-- Sidebar -->
+<div id="sidebar">
+    <a href="dashboard">Profile</a>
+    <a href="donation">Donate</a>
+    <a href="#networking">Networking</a>
+    <a href="success">Notable Alumni</a>
+    <a href="#jobs">Job Portal</a>
+    <a href="#events">Events</a>
+    <a href="logout">Logout</a>
+</div>
+
+<div id="main-content">
     <section class="donation-section">
         <h2>Make a Difference</h2>
         <p>Your donation supports scholarships, infrastructure, faculty development, and student programs. Every contribution counts in helping us grow and provide the best education for the future leaders of tomorrow.</p>
@@ -60,7 +84,6 @@
                     <option value="phonepe">PhonePe</option>
                 </select>
             </div>
-
             <button type="submit" class="donate-btn">Donate Now</button>
         </form>
     </section>
@@ -74,9 +97,39 @@
         </ul>
     </section>
 	<br>
-    <footer class="footer1">
-        <p>Contact us at @jiit.ac.in or at 95200095XX<br>&copy; 2024 Jaypee Institute of Information Technology | All Rights Reserved</p>
-    </footer>
-</body>
-</html>
 
+</div>
+
+<!-- Footer -->
+<footer>
+    <div>
+        <a href="#contact" onclick="scrollToSection('contact')">Contact Us</a>
+        <a href="#about" onclick="scrollToSection('about')">About Us</a>
+    </div>
+    <p>&copy; 2024 Alumni Dashboard. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+
+        sidebar.classList.toggle('open');
+        mainContent.classList.toggle('open');
+    }
+
+    function closeSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+
+        sidebar.classList.remove('open');
+        mainContent.classList.remove('open');
+    }
+
+    function openSettings() {
+        alert("Settings button clicked! Add your settings functionality here.");
+    }
+</script>
+</body>
+
+</html>

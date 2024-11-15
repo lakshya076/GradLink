@@ -63,6 +63,10 @@ def register():
 
 @app.route('/register_two', methods=['GET', 'POST'])
 def register_two():
+    if 'user_id' in session:
+        print("Already logged in. Redirecting to home.")
+        return redirect(url_for('home'))
+
     return render_template("register_two.html")
 
 
@@ -121,6 +125,9 @@ def login():
 def logout():
     session.pop('user_id', None)
     print("Logged out successfully")
+    render_template("register.html")
+    render_template("register_two.html")
+    render_template("login.html")
     return redirect(url_for('login'))
 
 
@@ -129,10 +136,13 @@ def donation():
     return render_template('donation.html')
 
 
-@app.route('/success')
-def success():
-    return render_template("success.html")
+@app.route('/alumni')
+def alumni():
+    return render_template("alumni.html")
 
+@app.route('/networking')
+def networking():
+    return render_template("networking.html")
 
 if __name__ == '__main__':
     print("Trying to connect to the database.")

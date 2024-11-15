@@ -72,16 +72,6 @@ header {
     background-color: #6A6A8D;
 }
 
-.profile-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-image: url('https://via.placeholder.com/45');
-    background-size: cover;
-    background-position: center;
-    border: 2px solid #F2E9E4;
-}
-
 /* Sidebar styles */
 #sidebar {
     position: fixed;
@@ -109,11 +99,60 @@ header {
     background-color: #4A4E69;
 }
 
+
+/* Open state for sidebar */
+#sidebar.open {
+    left: 0;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #F2E9E4;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #C9ADA7;
+}
+
+footer p {
+    font-size: 1em;
+    margin: 10px 0 0;
+}
+
 /* Main content styles */
 #main-content {
     padding: 20px;
     margin: 70px 0 0;
     transition: margin-left 0.4s ease;
+}
+
+#main-content.open {
+    margin-left: 250px;
+}
+
+
+.profile-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-image: url('https://via.placeholder.com/45');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #F2E9E4;
 }
 
 .profile-container {
@@ -192,41 +231,4 @@ header {
 
 .button:hover {
     background-color: #9E9EBD;
-}
-
-/* Open state for sidebar */
-#sidebar.open {
-    left: 0;
-}
-
-#main-content.open {
-    margin-left: 250px;
-}
-
-/* Footer styles */
-footer {
-    text-align: center;
-    padding: 10px 10px 10px 10px;
-    background-color: #1f1f1f;
-    color: #e0e0e0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-footer a {
-    color: #F2E9E4;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin: 0 15px;
-    transition: color 0.3s;
-}
-
-footer a:hover {
-    color: #C9ADA7;
-}
-
-footer p {
-    font-size: 1em;
-    margin: 10px 0 0;
 }

@@ -1,0 +1,261 @@
+
+/* Ensure header and navigation do not overlap */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  background-color: #2E2E2E;
+  color: #ffffff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4A4E69;
+  color: #F2E9E4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  height: 70px; /* Fixed height for the header */
+  text-align: center;
+}
+
+/* Add spacing to prevent overlap */
+nav {
+  margin-top: 70px; /* Push the nav below the fixed header */
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  list-style-type: none;
+  background-color: #1f1f1f; /* Dark navigation bar */
+  margin: 0;
+}
+
+nav ul li {
+  margin: 10px 30px;
+}
+
+nav ul li a {
+  color: #e0e0e0; /* Light text for links */
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px; /* Padding for clickable area */
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #333; /* Slightly lighter hover effect */
+  color: #ffffff;
+}
+
+  .category {
+    display: none;
+  }
+
+  .category h2 {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .alumni-list {
+    display: flex;
+    flex-direction: column; /* Stack alumni vertically */
+    gap: 30px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .alumnus {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center; /* Center-align vertically */
+    background-color: #1e1e1e; /* Dark card background */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    max-width: 800px; /* Max width for each alumni card */
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  .alumnus img {
+    max-width: 100%;
+  }
+
+  .alumni-photo {
+    width: 30%; /* Make photo take up 30% of the width */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px; /* Space between the image and the text */
+  }
+
+  .alumni-info {
+    width: 60%; /* Take up 60% of the container width */
+    text-align: left; /* Align text to the left */
+    font-size: larger;
+  }
+
+  p {
+    margin: 5px 0;
+    color: #e0e0e0; /* Light text */
+  }
+
+
+  /* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  background-color: #2E2E2E;
+  color: #ffffff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4A4E69;
+  color: #F2E9E4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  height: 70px;
+  text-align: center;
+}
+
+.hamburger-menu {
+  font-size: 20px;
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+.banner {
+  margin-right: auto;
+}
+
+.banner img {
+  width: 150px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  object-fit: cover; /* Ensures proper scaling of the image */
+  cursor: pointer;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Right-side buttons in header */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.header-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+  font-size: 20px;
+  color: #F2E9E4;
+  padding: 12px;
+  border-radius: 20%;
+  transition: background-color 0.3s;
+}
+
+.header-buttons button:hover {
+  background-color: #6A6A8D;
+}
+
+/* Sidebar styles */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #22223B;
+  color: #F2E9E4;
+  padding-top: 100px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.4s ease;
+}
+
+#sidebar a {
+  display: block;
+  color: #F2E9E4;
+  text-decoration: none;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+#sidebar a:hover {
+  background-color: #4A4E69;
+}
+
+
+/* Open state for sidebar */
+#sidebar.open {
+  left: 0;
+}
+
+
+footer {
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #F2E9E4;
+  text-decoration: none;
+  font-size: 1.1em;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #C9ADA7;
+}
+
+footer p {
+  font-size: 1em;
+  margin: 10px 0 0;
+}
+
+/* Main content styles */
+#main-content {
+  padding: 20px;
+  transition: margin-left 0.4s ease;
+  font-size: larger;
+}
+
+#main-content.open {
+  margin-left: 250px;
+}

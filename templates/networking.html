@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GradLink Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+    <title>Networking</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='network_css.css') }}">
+
 </head>
 
 <body>
@@ -17,7 +18,7 @@
             <img src="{{ url_for('static', filename='images/gradlink-banner.png') }}" alt="Banner Image">
         </a>
     </div>
-    <div class="title">Dashboard</div>
+    <div class="title">Networking Hub</div>
     <div class="header-buttons">
         <button onclick="openSettings()" title="Settings">&#9881;</button>
         <button class="profile-icon" title="Profile"></button>
@@ -34,32 +35,42 @@
     <a href="logout">Logout</a>
 </div>
 
-<!-- Main Content -->
 <div id="main-content">
-    <div class="profile-container">
-        <h2>Welcome, John Doe!</h2>
-        <div class="welcome-message">
-            Welcome to your Alumni Dashboard. Manage your profile, discover new opportunities, and connect with peers!
+    <div class="post-head">Create New Post</div>
+    <div class="create-post">
+        <div class="editor-container">
+
+          <!-- Formatting Toolbar -->
+          <div class="toolbar">
+            <button onclick="applyMarkdownSyntax('**')"><b>Bold</b></button>
+            <button onclick="applyMarkdownSyntax('_')"><i>Italics</i></button>
+            <button onclick="applyMarkdownSyntax('~~')"><s>Strikethrough</s></button>
+            <button onclick="applyMarkdownSyntax('`')">Code</button>
+            <button onclick="applyMarkdownSyntax('- ')">List</button>
+          </div>
+
+          <!-- Markdown Input Section -->
+          <div class="editor-section">
+            <div class="section-title">Edit</div>
+            <div id="markdownInput" contenteditable="true" class="contenteditable" placeholder="Type your post here..."></div>
+          </div>
+
+          <!-- Preview Section -->
+          <div class="editor-section">
+            <div class="section-title">Preview</div>
+            <div id="preview" class="preview"></div>
+          </div>
         </div>
 
-        <div class="profile-card-container">
-            <div class="profile-card">
-                <img src="https://www.entrepreneurindia.com/2018/assets/img/speakers/jaspreet.jpg"
-                     alt="Profile Picture">
-                <h3>John Doe</h3>
-                <p>Batch Year: 2013</p>
-                <p>DOB: 5/05/1991</p>
-                <p>Email: johndoe.@gmail.com</p>
-            </div>
+        <button onclick="createPost()">Post</button>
+        <br>
+      </div>
 
-            <div class="description-box-container">
-                <h4>About John Doe</h4>
-                <p>Alumni Bio section. Here the alumni can add their laurels, achievements and life experiences.</p>
-            </div>
-        </div>
+      <div id="postsContainer"></div>
 
-        <a href="#" class="button">Explore More</a>
-    </div>
+      <!-- Import Marked.js for Markdown rendering -->
+      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename='network_js.js') }}"></script>
 </div>
 
 <!-- Footer -->

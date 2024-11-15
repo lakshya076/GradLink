@@ -166,14 +166,24 @@ header {
     padding: 15px 0 10px 0;
 }
 
-.form-group input, .form-group select {
+.form-group input{
     padding: 0.5rem;
     width: 100%;
     border-radius: 5px;
     border: 1px solid #555; /* Darker borders */
     background-color: #2c2c2c; /* Dark input background */
     color: #e0e0e0; /* Light text */
+    width:92%;
 }
+ .form-group select{
+     padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #555; /* Darker borders */
+    background-color: #2c2c2c; /* Dark input background */
+    color: #e0e0e0; /* Light text */
+     width:95%;
+ }
 
 .donate-btn {
     grid-column: span 2;
@@ -208,8 +218,6 @@ header {
 .donor-list li {
     margin: 0.5rem 0;
 }
-
-
 
 footer {
     text-align: center;

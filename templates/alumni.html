@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notable Alumni</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alumni.css') }}">
+</head>
+
+<body>
+<!-- Header -->
+<header>
+    <span class="hamburger-menu" onclick="toggleSidebar()">&#9776;</span>
+    <div class="banner">
+        <a href="/dashboard">
+            <img src="{{ url_for('static', filename='images/gradlink-banner.png') }}" alt="Banner Image">
+        </a>
+    </div>
+    <div class="title">Notable Alumni</div>
+    <div class="header-buttons">
+        <button onclick="openSettings()" title="Settings">&#9881;</button>
+        <button class="profile-icon" title="Profile"></button>
+    </div>
+</header>
+<nav>
+    <ul>
+      <li><a href="#" class="category-link" data-category="business-leaders">Entrepreneurs</a></li>
+      <li><a href="#" class="category-link" data-category="engineers">Working in Industry</a></li>
+      <li><a href="#" class="category-link" data-category="artists">Higher Studies</a></li>
+      <li><a href="#" class="category-link" data-category="writers">Followed their Passion</a></li>
+    </ul>
+  </nav>
+<!-- Sidebar -->
+<div id="sidebar">
+    <a href="dashboard">Profile</a>
+    <a href="donation">Donate</a>
+    <a href="networking">Networking</a>
+    <a href="alumni">Notable Alumni</a>
+    <a href="#events">Events</a>
+    <a href="logout">Logout</a>
+</div>
+
+<div class="main-content">
+    <div class="category" id="business-leaders">
+      <h2>
+        <center>Entrepreneurs</center>
+      </h2>
+      <div class="alumni-list">
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a1.jpg') }}" alt="A1" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Jaspreet Makkar</p>
+            <p><strong>Year of Graduation:</strong> 2013</p>
+            <p><strong>Bio:</strong> Jaspreet Makkar was doing property coverage for a builder in Guwahati, a city in
+              India’s northeast, when he found himself beholding this “delightfully picturesque place.” His startup, We
+              Do Sky, uses drones to capture aerial intelligence that can help clients make data-driven decisions.</p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a2.jpg') }}" alt="A2" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Ria Rustagi</p>
+            <p><strong>Year of Graduation:</strong> 2015</p>
+            <p><strong>Bio:</strong> Ria Rustagi is the CEO and the powerhouse of Neuphony. She pursued MSc. in
+              Integrated Circuit Design from Singapore and Germany. With her entrepreneurship skills and
+              larger-than-life ideology to bring a change in the society, she stands tall as a strong pillar and
+              backbone of the company.</p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a3.jpg') }}" alt="A3" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Neelabh Srivastav</p>
+            <p><strong>Year of Graduation:</strong> 2006</p>
+            <p><strong>Bio:</strong>Neelabh Srivastav is the Co-founder of NotNul.Notnul Technologies Private Limited,
+              is an unlisted private company incorporated on 20 January, 2016. It is classified as a private limited
+              company and is located in Lucknow, Uttar Pradesh. It's authorized share capital is INR 10.00 lac and the
+              total paid-up capital is INR 1.00 lac.The current status of Notnul Technologies Private Limited is -
+              Active.</p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a4.jpg') }}" alt="A4" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Chhavi Singh</p>
+            <p><strong>Year of Graduation:</strong> 2006</p>
+            <p><strong>Bio:</strong> Chhavi Singh is the founder of DailyDesignist. A decade experience of working with
+              world’s biggest banks like UBS and Morgan Stanley at Wall Street, NY,US.Quit the job one fine day to find
+              fulfillment and meaning to life. To give back to society and make this world even a more beautiful
+              place.Here she is, on her journey of changing mindset of people when it comes to arts and particulary
+              women artisans.</p>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+
+    <div class="category" id="engineers">
+      <h2>
+        <center>Working in Industry</center>
+      </h2>
+      <div class="alumni-list">
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a5.jpg') }}" alt="A5" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Dhruv Bharadwaj</p>
+            <p><strong>Year of Graduation:</strong> 2013</p>
+            <p><strong>Bio:</strong> Software Developer at
+              AMAZON
+            </p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a6.jpg') }}" alt="A6" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Devyani Gera </p>
+            <p><strong>Year of Graduation:</strong> 2015</p>
+            <p><strong>Bio:</strong> Software Engineer,
+              Microsoft </p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a7.png') }}" alt="A7" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Chetan Arora</p>
+            <p><strong>Year of Graduation:</strong> 2017</p>
+            <p><strong>Bio:</strong> Principal Robotics
+              Engineer at BeeHex,
+              Inc.</p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a8.jpg') }}" alt="A8" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Anmol Agarwal </p>
+            <p><strong>Year of Graduation:</strong> 2011</p>
+            <p><strong>Bio:</strong> CTO, Provarity</p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a9.jpg') }}" alt="A9" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Aditya Mittal</p>
+            <p><strong>Year of Graduation:</strong> 2014</p>
+            <p><strong>Bio:</strong> Development
+              Engineer, NVIDIA</p>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+
+    <div class="category" id="artists">
+      <h2>
+        <center>Higher Studies</center>
+      </h2>
+      <div class="alumni-list">
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/user.jpg') }}" alt="A-User1" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Indranil Sen</p>
+            <p><strong>Year of Graduation:</strong> 2012</p>
+            <p><strong>Bio:</strong> University of Southern
+              California </p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/user.jpg') }}" alt="A-User2" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Aditya Varshney </p>
+            <p><strong>Year of Graduation:</strong> 2017</p>
+            <p><strong>Bio:</strong> University of
+              Colorado Boulder </p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/user.jpg') }}" alt="A-User3" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Ravi Rawat </p>
+            <p><strong>Year of Graduation:</strong> 2018</p>
+            <p><strong>Bio:</strong> Frankfurt School of
+              Finance &
+              Management </p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/user.jpg') }}" alt="A-User4" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Shivam Singh </p>
+            <p><strong>Year of Graduation:</strong> 2018</p>
+            <p><strong>Bio:</strong> MONASH
+              UNIVERSITY,
+              AUSTRALIA </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category" id="writers">
+      <h2>
+        <center>Followed their
+          Passion </center>
+      </h2>
+      <div class="alumni-list">
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a10.jpg') }}" alt="A10" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Kriti Sanon</p>
+            <p><strong>Year of Graduation:</strong> 2011</p>
+            <p><strong>Bio:</strong> Accomplished
+              Bollywood Actress </p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a11.jpg') }}" alt="A11" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Sakshi Malik</p>
+            <p><strong>Year of Graduation:</strong> 2015</p>
+            <p><strong>Bio:</strong> Fashion Model</p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a12.jpg') }}" alt="A12" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Apurv Gupta</p>
+            <p><strong>Year of Graduation:</strong> 2012</p>
+            <p><strong>Bio:</strong> Standup Comedian</p>
+          </div>
+        </div>
+        <div class="alumnus">
+          <img src="{{ url_for('static', filename='images/alumni/a13.jpg') }}" alt="A13" class="alumni-photo">
+          <div class="alumni-info">
+            <p><strong>Name:</strong> Kunal Narula </p>
+            <p><strong>Year of Graduation:</strong> 2015</p>
+            <p><strong>Bio:</strong> Director Vayam
+              Motion Pictures</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer>
+    <div>
+        <a href="#contact" onclick="scrollToSection('contact')">Contact Us</a>
+        <a href="#about" onclick="scrollToSection('about')">About Us</a>
+    </div>
+    <p>&copy; 2024 Alumni Dashboard. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+
+        sidebar.classList.toggle('open');
+        mainContent.classList.toggle('open');
+    }
+
+    function closeSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+
+        sidebar.classList.remove('open');
+        mainContent.classList.remove('open');
+    }
+
+    function openSettings() {
+        alert("Settings button clicked! Add your settings functionality here.");
+    }
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='alumni_js.js') }}"></script>
+</body>
+
+</html>

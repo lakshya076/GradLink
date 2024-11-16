@@ -19,8 +19,8 @@
     </div>
     <div class="title">Dashboard</div>
     <div class="header-buttons">
-        <button onclick="openSettings()" title="Settings">&#9881;</button>
-        <button class="profile-icon" title="Profile"></button>
+        <button onclick="openSettings()" title="Settings" class="header-icons" style="background: url(static/images/setting.png)"></button>
+        <button onclick="window.location.href='/logout';" class="header-icons" title="Logout" style="background: url(static/images/logout.png)"></button>
     </div>
 </header>
 
@@ -30,35 +30,33 @@
     <a href="donation">Donate</a>
     <a href="networking">Networking</a>
     <a href="alumni">Notable Alumni</a>
-    <a href="#events">Events</a>
+    <a href="events">Events</a>
     <a href="logout">Logout</a>
 </div>
 
 <!-- Main Content -->
 <div id="main-content">
     <div class="profile-container">
-        <h2>Welcome, John Doe!</h2>
+        <h2>Welcome, {{ data['fullname'] }}!</h2>
         <div class="welcome-message">
             Welcome to your Alumni Dashboard. Manage your profile, discover new opportunities, and connect with peers!
         </div>
 
         <div class="profile-card-container">
             <div class="profile-card">
-                <img src="https://www.entrepreneurindia.com/2018/assets/img/speakers/jaspreet.jpg"
+                <img src="{{ url_for('static', filename='images/alumni/user.jpg') }}"
                      alt="Profile Picture">
-                <h3>John Doe</h3>
-                <p>Batch Year: 2013</p>
-                <p>DOB: 5/05/1991</p>
-                <p>Email: johndoe.@gmail.com</p>
+                <h3>{{ data['fullname'] }}</h3>
+                <p>Batch Year: {{ data['grad_year'] }}</p>
+                <p>DOB: {{ data['dob'] }}</p>
+                <p>Email: {{ data['email'] }}</p>
             </div>
 
             <div class="description-box-container">
-                <h4>About John Doe</h4>
+                <h4>About {{ data['fullname'] }}</h4>
                 <p>Alumni Bio section. Here the alumni can add their laurels, achievements and life experiences.</p>
             </div>
         </div>
-
-        <a href="#" class="button">Explore More</a>
     </div>
 </div>
 

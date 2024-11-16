@@ -71,9 +71,9 @@ header {
     background-color: #6A6A8D;
 }
 
-.profile-icon {
-    width: 45px;
-    height: 45px;
+.header-icons {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background-image: url('https://via.placeholder.com/45');
     background-size: cover;

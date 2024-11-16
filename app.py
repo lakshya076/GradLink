@@ -23,7 +23,8 @@ def home():
     if 'user_id' not in session:
         return redirect(url_for('login'))
 
-    return render_template("index.html")
+    data = user_col.find_one({"_id": session['user_id']})
+    return render_template("index.html", data=data)
 
 
 @app.route('/dashboard')
@@ -31,7 +32,8 @@ def dashboard():
     if 'user_id' not in session:
         return redirect(url_for('login'))
 
-    return render_template("index.html")
+    data = user_col.find_one({"_id": session['user_id']})
+    return render_template("index.html", data=data)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -143,6 +145,10 @@ def alumni():
 @app.route('/networking')
 def networking():
     return render_template("networking.html")
+
+@app.route('/events')
+def events():
+    return render_template("events.html")
 
 if __name__ == '__main__':
     print("Trying to connect to the database.")

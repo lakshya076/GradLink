@@ -188,6 +188,16 @@ header {
   background-color: #6A6A8D;
 }
 
+.header-icons {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-image: url('https://via.placeholder.com/45');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #F2E9E4;
+}
+
 /* Sidebar styles */
 #sidebar {
   position: fixed;

@@ -35,32 +35,78 @@
     <a href="events">Events</a>
     <a href="logout">Logout</a>
 </div>
-
-<!-- Main Content -->
-<div id="main-content">
-    <div class="profile-container">
-        <h2>Welcome, {{ user_data['fullname'] }}!</h2>
-        <div class="welcome-message">
-            Welcome to your Alumni Dashboard. Manage your profile, discover new opportunities, and connect with peers!
-        </div>
-
-        <div class="profile-card-container">
-            <div class="profile-card">
-                <img src="{{ url_for('static', filename='images/alumni/user.jpg') }}"
-                     alt="Profile Picture">
-                <h3>{{ user_data['fullname'] }}</h3>
-                <p>Batch Year: {{ acad_data['grad_year'] }}</p>
-                <p>DOB: {{ user_data['dob'] }}</p>
-                <p>Email: {{ user_data['email'] }}</p>
+<br><br><br>
+    <section class="portfolio-container">
+        <main class="main-content">
+          <div class="content-wrapper">
+            <div class="left-column">
+              <div class="left-content">
+                <div class="intro-section">
+                  <div class="intro-text">
+                    <div class="slogan-intro">
+                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bfbe7904aa1ff1a04b145c7919596fea0b061a597da74313252360ecc2f433c0?placeholderIfAbsent=true&apiKey=789ae9acb1b245f3af23ded83f794c9c" alt="" class="intro-icon" />
+                      <h1 class="slogan-text">
+                        Welcome
+                        <span class="italic-text">{{ user_data['fullname'] }}!</span>
+                      </h1>
+                    </div>
+                  </div>
+                  <div class="intro-image">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a" alt="Julia Huang's architectural design" class="hero-image" />
+                  </div>
+                </div>
+                <div class="info-section">
+                  <div class="info-wrapper">
+                    <div class="about-column">
+                      <div id="about" class="about-content">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0801eab0b521238955ab2cb7dbd413b5d8b77f0660b9938487dcd5aa2d909336?placeholderIfAbsent=true&apiKey=789ae9acb1b245f3af23ded83f794c9c" alt="" class="about-icon" />
+                        <p class="about-text">Batch Year: {{ acad_data['grad_year'] }}</p>
+                        <p class="about-text">DOB: {{ user_data['dob'] }}</p>
+                        <p class="about-text">Email: {{ user_data['email'] }}</p>
+                      </div>
+                    </div>
+                    <div class="contact-column">
+                      <div id="contact" class="contact-content">
+                        <div class="contact-top">
+                          <p>
+                            Have some <br /> questions?
+                          </p>
+                          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6ec8263890bbbe4ce7fe0bd6a76f454cc9ba05266209e4c4dc8bb3c5c5f93a22?placeholderIfAbsent=true&apiKey=789ae9acb1b245f3af23ded83f794c9c" alt="" class="contact-icon" />
+                        </div>
+                        <h2 class="contact-cta">Contact me</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div class="description-box-container">
-                <h4>About {{ user_data['fullname'] }}</h4>
-                <p>Alumni Bio section. Here the alumni can add their laurels, achievements and life experiences.</p>
+            <div class="right-column">
+              <div class="right-content">
+                <section id="projects" class="work-section">
+                  <div class="work-header">
+                    <h3>Musea</h3>
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cf1423798b95d7e316981440b12401abba63cb9f04ec734f0b4059d6294dafe5?placeholderIfAbsent=true&apiKey=789ae9acb1b245f3af23ded83f794c9c" alt="" class="work-icon" />
+                  </div>
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5bf8efe87365ae17c8fa12665abbfe0ef7b300b32f22e856fdb42205954efc79?placeholderIfAbsent=true&apiKey=789ae9acb1b245f3af23ded83f794c9c" alt="Musea project showcase" class="work-image" />
+                  <hr class="work-divider" />
+                  <h3 class="work-item">Elara</h3>
+                  <hr class="work-divider" />
+                  <h3 class="work-item">Verve</h3>
+                  <hr class="work-divider" />
+                  <h3 class="work-item">Zephyr</h3>
+                </section>
+                <div class="socials">
+                  <div class="social-links">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Linkedin</a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-</div>
+          </div>
+        </main>
+      </section>
 
 <!-- Footer -->
 <footer>

@@ -35,7 +35,7 @@ def dashboard():
 
     user_retrieval = user_col.find_one({"_id": session['user_id']})
     acad_retrieval = acad_col.find_one({"_id": session['user_id']})
-    return render_template("index.html", data=user_retrieval, acad_data=acad_retrieval)
+    return render_template("index.html", user_data=user_retrieval, acad_data=acad_retrieval)
 
 
 @app.route('/register', methods=['GET', 'POST'])

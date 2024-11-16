@@ -79,16 +79,6 @@ header {
     background-color: #6A6A8D;
 }
 
-.header-icons {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-image: url('https://via.placeholder.com/45');
-    background-size: cover;
-    background-position: center;
-    border: 2px solid #F2E9E4;
-}
-
 /* Sidebar styles */
 #sidebar {
     position: fixed;
@@ -287,3 +277,39 @@ button:hover {
     font-family: Arial;
     font-size: 24px;
 }
+/* Style for each post block */
+.post-block {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for post text */
+.post-block p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+
+.container
+{
+	display:grid;
+	grid-template-columns:500px 500px;
+	grid-template-rows:200px 200px;
+	grid-auto-rows:100px;
+	margin-left: 30px;
+	margin-right:30px;
+	justify-content:center;
+}
+.item
+{
+	background-color:#1F1F1F;
+	margin:5px;
+	padding:0px;
+	border-radius:10px;
+}
+

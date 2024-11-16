@@ -4,7 +4,6 @@ function validateForm() {
     const repeatPassword = document.getElementById('repeatPassword');
     let isValid = true;
 
-    // Loop through required fields and check if they are empty
     form.querySelectorAll('input[required], select[required]').forEach((input) => {
         if (!input.value) {
             input.classList.add('error'); // Add red outline if empty

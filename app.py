@@ -23,8 +23,9 @@ def home():
     if 'user_id' not in session:
         return redirect(url_for('login'))
 
-    data = user_col.find_one({"_id": session['user_id']})
-    return render_template("index.html", data=data)
+    user_retrieval = user_col.find_one({"_id": session['user_id']})
+    acad_retrieval = acad_col.find_one({"_id": session['user_id']})
+    return render_template("index.html", user_data=user_retrieval, acad_data=acad_retrieval)
 
 
 @app.route('/dashboard')
@@ -32,8 +33,9 @@ def dashboard():
     if 'user_id' not in session:
         return redirect(url_for('login'))
 
-    data = user_col.find_one({"_id": session['user_id']})
-    return render_template("index.html", data=data)
+    user_retrieval = user_col.find_one({"_id": session['user_id']})
+    acad_retrieval = acad_col.find_one({"_id": session['user_id']})
+    return render_template("index.html", data=user_retrieval, acad_data=acad_retrieval)
 
 
 @app.route('/register', methods=['GET', 'POST'])

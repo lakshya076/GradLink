@@ -10,7 +10,6 @@
 </head>
 
 <body>
-<!-- Header -->
 <header>
     <span class="hamburger-menu" onclick="toggleSidebar()">&#9776;</span>
     <div class="banner">
@@ -25,7 +24,6 @@
     </div>
 </header>
 
-<!-- Sidebar -->
 <div id="sidebar">
     <a href="dashboard">Profile</a>
     <a href="donation">Donate</a>
@@ -40,7 +38,6 @@
     <div class="create-post">
         <div class="editor-container">
 
-            <!-- Formatting Toolbar -->
             <div class="toolbar">
                 <button onclick="applyMarkdownSyntax('**')"><b>Bold</b></button>
                 <button onclick="applyMarkdownSyntax('_')"><i>Italics</i></button>
@@ -49,14 +46,12 @@
                 <button onclick="applyMarkdownSyntax('- ')">List</button>
             </div>
 
-            <!-- Markdown Input Section -->
             <div class="editor-section">
                 <div class="section-title">Edit</div>
                 <div id="markdownInput" contenteditable="true" class="contenteditable"
                      placeholder="Type your post here..."></div>
             </div>
 
-            <!-- Preview Section -->
             <div class="editor-section">
                 <div class="section-title">Preview</div>
                 <div id="preview" class="preview"></div>
@@ -106,12 +101,10 @@
 		</pre>
         </div>
     </div>
-    <!-- Import Marked.js for Markdown rendering -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='network_js.js') }}"></script>
 </div>
 
-<!-- Footer -->
 <footer>
     <div>
         <a href="#contact" onclick="scrollToSection('contact')">Contact Us</a>

@@ -19,8 +19,10 @@
     </div>
     <div class="title">Dashboard</div>
     <div class="header-buttons">
-        <button onclick="openSettings()" title="Settings" class="header-icons" style="background: url(static/images/setting.png)"></button>
-        <button onclick="window.location.href='/logout';" class="header-icons" title="Logout" style="background: url(static/images/logout.png)"></button>
+        <button onclick="openSettings()" title="Settings" class="header-icons"
+                style="background: url(static/images/setting.png)"></button>
+        <button onclick="window.location.href='/logout';" class="header-icons" title="Logout"
+                style="background: url(static/images/logout.png)"></button>
     </div>
 </header>
 
@@ -37,7 +39,7 @@
 <!-- Main Content -->
 <div id="main-content">
     <div class="profile-container">
-        <h2>Welcome, {{ data['fullname'] }}!</h2>
+        <h2>Welcome, {{ user_data['fullname'] }}!</h2>
         <div class="welcome-message">
             Welcome to your Alumni Dashboard. Manage your profile, discover new opportunities, and connect with peers!
         </div>
@@ -46,14 +48,14 @@
             <div class="profile-card">
                 <img src="{{ url_for('static', filename='images/alumni/user.jpg') }}"
                      alt="Profile Picture">
-                <h3>{{ data['fullname'] }}</h3>
-                <p>Batch Year: {{ data['grad_year'] }}</p>
-                <p>DOB: {{ data['dob'] }}</p>
-                <p>Email: {{ data['email'] }}</p>
+                <h3>{{ user_data['fullname'] }}</h3>
+                <p>Batch Year: {{ acad_data['grad_year'] }}</p>
+                <p>DOB: {{ user_data['dob'] }}</p>
+                <p>Email: {{ user_data['email'] }}</p>
             </div>
 
             <div class="description-box-container">
-                <h4>About {{ data['fullname'] }}</h4>
+                <h4>About {{ user_data['fullname'] }}</h4>
                 <p>Alumni Bio section. Here the alumni can add their laurels, achievements and life experiences.</p>
             </div>
         </div>
